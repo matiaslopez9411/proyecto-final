@@ -1,0 +1,19 @@
+{% extends 'proyectofinal/base.html' %} 
+
+    {% block titulo%} Buscar Jedi por nombre {% endblock %} <!--contenido del block título-->
+    
+    {% block contenido %} 
+        <form action="/jedis/buscar/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Buscar">
+        </form>
+
+        {% for jedi in lista_jedis %}
+            <ul>
+                <li> Nombre: {{jedi.nombre}}, Número Jedi: {{jedi.numero_jedi}}, Título: {{jedi.titulo}}, Sable: {{jedi.color_sable}}, Creado en: {{jedi.creado}}
+                </li>
+            </ul>
+        {% endfor %}
+
+    {% endblock %}

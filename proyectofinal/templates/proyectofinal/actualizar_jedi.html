@@ -1,0 +1,15 @@
+{% extends 'proyectofinal/base.html' %}
+{% block titulo%} Alta de nuevo Familiar {% endblock %}
+{% block contenido %}
+  
+  <form action="/jedis/actualizar/{{ jedi.id }}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Actualizar">
+  </form>
+
+  <h2 style="color:green">{{msg_exito}}</h2>
+
+  <h3> <a href='/jedis/'>Volver a la lista</a></h3>
+
+{% endblock %}

@@ -1,0 +1,2 @@
+nombres_random=['Drexel Allerti', 'Cutter Koradou', 'Chester Frey', 'Auros Morillo', 'Jonn Ghent', 'Erennassisat Rann', 'Nadia Pieweto', 'Habria Darmal', 'Mya Win-Dell', 'Cord Darrst', 
+'Carh`la Gal', 'Raena Moliere', 'Nils Mackali', 'Ban Warner', 'Hugh Stadd', 'Broo Kelbier', 'Nema Orainn', 'Rail Thane']
