@@ -11,7 +11,7 @@
 
         {% for jedi in lista_jedis %}
             <ul>
-                <li> Nombre: {{jedi.nombre}}, Número Jedi: {{jedi.numero_jedi}}, Título: {{jedi.titulo}}, Sable: {{jedi.color_sable}}, Creado en: {{jedi.creado}} <a href="{% url 'jedis-actualizar' jedi.id %}">Modificar</a>
+                <li> <b>Nombre</b>: {{jedi.nombre}} - <b>Numero Jedi</b>: {{jedi.numero_jedi}} - <b>Título</b>: {{jedi.titulo}} - <b>Sable</b>: {{jedi.color_sable}} - <b>Creado en</b>: {{jedi.creado}} <a href="{% url 'jedis-actualizar' jedi.id %}">Modificar</a>
                 </li>
             </ul>
         {% endfor %}
