@@ -2,7 +2,7 @@
 {% block titulo%} Alta de nuevo Familiar {% endblock %}
 {% block contenido %}
   
-  <form action="/jedis/actualizar/{{ jedi.id }}" method="post">
+  <form action="{% url 'jedis-actualizar' jedi.id %}" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Actualizar">
@@ -10,6 +10,7 @@
 
   <h2 style="color:green">{{msg_exito}}</h2>
 
-  <h3> <a href='/jedis/'>Volver a la lista</a></h3>
+  <h3> <a href="{% url 'jedis-integrantes'%}">Volver a la lista</a></h3>
 
 {% endblock %}
+

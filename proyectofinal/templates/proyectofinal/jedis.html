@@ -7,14 +7,14 @@
             <ul>
                 <li> 
                     <b>Nombre</b>:{{jedi.nombre}} - <b>Numero Jedi</b>: {{jedi.numero_jedi}} - <b>Título</b>: {{jedi.titulo}} - <b>Sable</b>: {{jedi.color_sable}} - <b>Creado en</b>: {{jedi.creado}}
-                    <a href='actualizar/{{jedi.id}}'>Actualizar</a>
-                    <a href='borrar/{{jedi.id}}'>Borrar</a>
+                    <a href="{% url 'jedis-actualizar' jedi.id%}">Actualizar</a>
+                    <a href="{% url 'jedis-borrar' jedi.id%}">Borrar</a>
                 </li>
             </ul>
         {% endfor %}
 
-        <b><a href='/jedis/alta/'>Nuevo integrante</a> <br>
-        <a href='/home/'>Volver al inicio</a></b>
+        <b><a href="{% url 'jedis-alta'%}">Nuevo integrante</a> <br>
+        <a href="{% url 'home'%}">Volver al inicio</a></b>
         
 
     {% endblock %}

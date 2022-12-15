@@ -2,8 +2,12 @@ from django.shortcuts import render, get_object_or_404
 from django.views import View
 from proyectofinal.models import Jedi
 from proyectofinal.forms import Buscar, JediForm
+from django.urls import reverse_lazy
 
-# Create your views here.
+#Create your views here.
+def pasar_path(request, id):
+    return id
+
 def home(request):
     return render(request, "proyectofinal/home.html")
 

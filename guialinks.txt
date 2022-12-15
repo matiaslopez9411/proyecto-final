@@ -1,0 +1,20 @@
+En las urls.py, reemplazar
+
+path('mi-path', MiClase.asview()),
+
+por:
+
+path("mi-path", MiClase.asview(), name="mi-path"),
+
+En el html reemplazar las urls con el nombre de la url que le dimos en el path, por ejemplo:
+
+<form action="{% url 'mi-path' %}" method="post">
+Y si quieren pasar un argumento, se debe poner en el lado derecho de la url, poniendo un espacio, por ejemplo:
+
+<form action="{% url 'mi-path' variable.id %}" method="post">
+
+Cuando se pasa un argumento por path, como arriba, lo que hay que hacer es tener en views.py una función que reciba tal argumento, por ejemplo:
+
+def funcion(request, id):
+
+    print(id)
