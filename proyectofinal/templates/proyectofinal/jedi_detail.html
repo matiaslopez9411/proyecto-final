@@ -1,0 +1,17 @@
+{% extends 'proyectofinal/base.html' %} 
+
+{% block buscar %} {% endblock %}
+{% block titulo%} {{jedi.nombre}} {% endblock %}
+{% block contenido %}
+<ul>
+    <li>
+        <b>Numero Jedi</b>: {{jedi.numero_jedi}} - <b>Título</b>: {{jedi.titulo}} - <b>Sable</b>: {{jedi.color_sable}} - <b>Creado en</b>: {{jedi.creado}}
+        <a href="{% url 'jedis-actualizar' jedi.id%}">Actualizar</a>
+        <a href="{% url 'jedis-borrar' jedi.id%}">Borrar</a>
+    </li>
+</ul>
+<a href="{% url 'jedis-panel'%}">Volver a lista de integrantes</a><br>
+{% endblock %}
+
+</body>
+</html>

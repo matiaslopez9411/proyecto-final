@@ -1,5 +1,5 @@
 {% extends 'proyectofinal/base.html' %}
-{% block titulo%} Alta de nuevo Familiar {% endblock %}
+{% block titulo%} Nuevo integrante {% endblock %}
 {% block contenido %}
   
   <form action="{% url 'jedis-alta'%}" method="post">
@@ -10,6 +10,6 @@
 
   <h2 style="color:green">{{msg_exito}}</h2>
 
-  <h3> <a href="{% url 'jedis-integrantes'%}">Volver a la lista</a></h3>
+  <h3> <a href="{% url 'jedis-panel'%}">Volver a la lista</a></h3>
 
 {% endblock %}

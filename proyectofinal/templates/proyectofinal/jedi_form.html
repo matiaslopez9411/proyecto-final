@@ -1,0 +1,13 @@
+{% extends 'proyectofinal/base.html' %}
+{% block titulo%} Nuevo integrante {% endblock %}
+{% block contenido %}
+
+    <form action="{% url 'jedis-alta'%}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Cargar">
+    </form>
+
+    <h3> <a href="{% url 'jedis-panel'%}">Volver a la lista</a></h3>
+
+{% endblock %}

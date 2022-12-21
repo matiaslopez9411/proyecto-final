@@ -1,21 +1,20 @@
 {% extends 'proyectofinal/base.html' %} 
 
-    {% block titulo%} Inscriptos al Sindicato Jedi {% endblock %} <!--contenido del block título-->
-    
+    {% block buscar %} {% endblock %}
+
+    {% block titulo%} Inscriptos al Sindicato Jedi {% endblock %}
+
     {% block contenido %} 
-        {% for jedi in lista_jedis %}
+        {% for jedi in object_list %}
             <ul>
                 <li> 
                     <b>Nombre</b>: {{jedi.nombre}} - <b>Numero Jedi</b>: {{jedi.numero_jedi}}
                     <a href="{% url 'jedis-detalle' jedi.id%}">Detalle</a>
-                    <a href="{% url 'jedis-actualizar' jedi.id%}">Actualizar</a>
-                    <a href="{% url 'jedis-borrar' jedi.id%}">Borrar</a>
                 </li>
             </ul>
         {% endfor %}
 
         <b><a href="{% url 'jedis-alta'%}">Nuevo integrante</a> <br>
         <a href="{% url 'home'%}">Volver al inicio</a></b>
-        
 
     {% endblock %}
