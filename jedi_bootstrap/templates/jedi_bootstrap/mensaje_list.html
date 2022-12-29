@@ -1,0 +1,20 @@
+{% extends 'jedi_bootstrap/base.html' %}
+
+{% block contenido %}
+<div class="container">
+<ul>
+{% for mensaje in object_list %}
+  <li> Mensaje de {{mensaje.nombre}}, enviado: {{mensaje.enviado_el}}
+    <a href="{% url 'mensaje-detalle' mensaje.id%}">Leer</a>
+  {% if user.is_staff %}
+    <a href="{% url 'mensaje-borrar' mensaje.id%}">Borrar</a>
+    <a href="{% url 'mensaje-responder' mensaje.id%}">Responder</a>
+  {% endif %}
+  </li>
+{% endfor %}
+  <div class="text-center">
+  <a class="btn btn-secondary" href="{% url 'mensaje-nuevo' %}">Escribir Mensaje</a>
+  </div>
+</div>
+</ul>
+{% endblock %}

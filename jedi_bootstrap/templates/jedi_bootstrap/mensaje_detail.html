@@ -1,0 +1,25 @@
+{% extends 'jedi_bootstrap/base.html' %}
+
+{% block contenido %}
+<div class="container">
+    <div class="text-center my-5">
+        <h1 class="fw-lighter"><b>Mensaje de {{object.nombre}}</b></h1>        
+    </div>
+
+    <p class="lead mb-0">{{object.texto}}</p>
+    <div>
+        <p>Email: {{object.email}}</p>
+    </div>
+    {% if user.is_staff %}
+    <a href="{% url 'mensaje-borrar' mensaje.id%}">Borrar</a>
+    <a href="{% url 'mensaje-responder' mensaje.id%}">Responder</a>
+    {% endif %}
+<br>
+    <p class="lead mb-0"><b>Respuesta:</b> {{object.respuesta}}</p>
+<br>
+    <div>
+    <a class="btn btn-primary" href="{% url 'mensaje-lista'%}">Volver a la lista →</a>
+    </div>
+</div>
+<br>
+{% endblock %}

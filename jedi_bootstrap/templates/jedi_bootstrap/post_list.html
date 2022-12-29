@@ -1,0 +1,27 @@
+{% extends 'jedi_bootstrap/base.html' %}
+
+{% block contenido %}
+<div class="container">
+<div class="text-center">
+{% if user.is_staff %}
+  <a class="btn btn-secondary" href="{% url 'jedi-newpost'%}">Nuevo Post</a>
+{% endif %}
+  {% if user.avatar %}
+    <a class="btn btn-secondary" href="{% url 'jedi-avatar' user.id %}">Actualizar Avatar</a>
+  {% endif %}
+  <a class="btn btn-secondary" href="{% url 'user-actualizar' user.id %}">Actualizar Perfil</a>
+</div>
+<br>
+<ul>
+{% for post in object_list %}
+  <li> {{post.publicado_el}}, <b>{{post.titulo}}</b>
+  {% if user.is_staff%}
+    <a href="{% url 'post-borrar' post.id%}">Borrar</a>
+    <a href="{% url 'post-actualizar' post.id%}">Modificar</a>
+  {% endif %}
+  <a href="{% url 'post-detalle' post.id%}">Leer mas</a>
+  </li>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

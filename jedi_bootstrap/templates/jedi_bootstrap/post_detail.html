@@ -1,0 +1,25 @@
+{% extends 'jedi_bootstrap/base.html' %}
+
+{% block contenido %}
+<div class="container">
+    <div class="text-center my-5">
+        <h1 class="fw-bolder">{{object.titulo}}</h1>
+        <h3>{{object.sub_titulo}}</h3>        
+    </div>
+    
+    <div class="text-center my-5">
+        <img src="{{object.imagen.url}}" height="350">
+    </div>
+    <div>
+        <p class="lead mb-0">{{object.texto}}</p>
+    </div>
+
+<br>
+    <div class="text-end">
+    {% if user.is_authenticated %}
+        <a class="btn btn-primary" href="{% url 'jedi-posteos'%}">Volver a la lista →</a>
+    {% endif %}
+    </div>
+<br>
+</div>
+{% endblock %}

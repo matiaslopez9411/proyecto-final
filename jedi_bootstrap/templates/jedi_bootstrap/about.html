@@ -1,0 +1,22 @@
+{% extends 'jedi_bootstrap/base.html' %}
+{% load static %}
+{% block contenido %}
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Conoce al Equipo</h1>
+        </div>
+    </div>
+    <div class="text-center">
+        <img src="{% static 'jedi_bootstrap/media/foto_cv.jpg' %}" alt="Messi Campeon" width="300">
+        <br> 
+        <h3 class="card-title">Matías E. López</h3> 
+        <br>                   
+        <p class="lead mb-0">Soy Licenciado en Cs. Geológicas y actualmente busco nuevas herramientas
+                        <br>para seguir desarrollandome como profesional. Empecé el curso porque se 
+                        <br>que Python es muy bueno para el manejo de grandes cantidades de datos. 
+                        <br>Sin embargo, haber aprendido habilidades de back-end me abre también un  
+                        <br>abanico de nuevas posibilidades en el mercado laboral.                                  
+        </p>
+    </div>
+    <br>
+{% endblock %}

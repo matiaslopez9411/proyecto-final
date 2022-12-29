@@ -1,0 +1,20 @@
+{% extends 'jedi_bootstrap/base.html' %}
+
+{% block contenido %}
+
+<div class="container">
+    <h1 class="fs-2">Actualizar Usuario</h1>
+
+    <form method="POST"> 
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Actualizar"></form>
+    </form>
+    <br>
+    <div class="text-end">
+        <a class="btn btn-primary" href="{% url 'jedi-posteos'%}">Volver a la lista →</a>
+    </div>
+<br>
+</div>
+<br>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'jedi_bootstrap/base.html' %}
+
+{% block contenido %}
+<div class="container">
+    <form enctype='multipart/form-data' method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Subir">
+    </form>
+    <br>
+    <div class="text-end">
+        <a class="btn btn-primary" href="{% url 'jedi-posteos'%}">Volver a la lista →</a>
+    </div>
+<br>
+    
+</div>
+<br>
+{% endblock %}

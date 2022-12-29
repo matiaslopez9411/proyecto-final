@@ -1,0 +1,16 @@
+{% extends 'jedi_bootstrap/base.html' %}
+
+{% block contenido %}
+<div class="container">
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Enviar">
+</form>
+<br>
+    <div class="text-end">
+        <a class="btn btn-primary" href="{% url 'mensaje-lista'%}">Volver a la lista →</a>
+    </div>
+</div>
+<br>
+{% endblock %}

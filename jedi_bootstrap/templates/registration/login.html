@@ -1,0 +1,13 @@
+{% extends 'jedi_bootstrap/base.html' %}
+
+{% block contenido %}
+<div class="container">
+    <h2>Registrar Usuario</h2>
+    <form method="POST"> 
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Ingresar"></form>
+    </form>
+</div>
+<br>
+{% endblock %}

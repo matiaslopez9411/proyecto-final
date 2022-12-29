@@ -1,0 +1,18 @@
+{% extends 'jedi_bootstrap/base.html' %}
+
+{% block contenido %}
+<div class="container">
+<form method="post">
+    {% csrf_token %}
+    ¿Está seguro que desea borrar el mensaje de la siguiente persona: <b>{{ mensaje.nombre }}</b>?
+    <input type="submit" value="Eliminar">
+</form>
+<br>
+    <div class="text-end">
+        {% if user.is_authenticated %}
+            <a class="btn btn-primary" href="{% url 'mensaje-lista'%}">Volver a la lista →</a>
+        {% endif %}
+    </div>
+</div>
+<br>
+{% endblock %}
