@@ -16,4 +16,8 @@ El administrador del sitio y los diferentes miembros del staff tienen derechos a
 responder a los mensajes de los usuarios y, por ultimo, el usuario admin tiene la potestad de definir los avatares de cada usuario. Una vez definido
 el avatar, cada usuario puede modificarlo.
 
-Muchas gracias.
+Desde esta dirección puede mirar un video en donde se revisan las funcionalidades del sitio web:
+
+https://youtu.be/PfKXdSCxxJk
+
+Muchas gracias
