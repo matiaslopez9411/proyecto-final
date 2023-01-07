@@ -17,7 +17,13 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'jedi-index' %}">
-                    <img src="{{user.avatar.imagen.url}}" height="64">
+                    {% if user.is_authenticated %}
+                        {% if user.avatar.imagen.url %}
+                        <img src="{{user.avatar.imagen.url}}" height="64">
+                        {% else %}
+                        <img src="{% static 'jedi_bootstrap/media/default.jpg' %}" height="64">
+                        {% endif %}
+                    {% endif %}
                     El Consejo Jedi                    
                 </a>  
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -30,7 +36,6 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'jedi-posteos' %}">Administrar</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'jedi-logout' %}">Salir</a></li>
                         {% else %}
-                            <li class="nav-item"><a class="nav-link" href="{% url 'jedi-signup' %}">Registrarse</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'jedi-login' %}">Acceder</a></li>
                         {% endif %}
                         {% if user.is_authenticated %}

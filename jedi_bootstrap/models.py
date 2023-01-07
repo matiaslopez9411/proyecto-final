@@ -14,7 +14,7 @@ class Post(models.Model):
 
 class Avatar(models.Model):
     user = models.OneToOneField(to=User, on_delete=models.CASCADE, related_name="avatar")
-    imagen = models.ImageField(upload_to="avatares", null="True", blank=True)
+    imagen = models.ImageField(upload_to="avatares", null="True", blank=True, default='default.jpg')
 
 class Mensaje(models.Model):
     email = models.EmailField()
